@@ -27,12 +27,12 @@ bibliography: paper.bib
 # Summary
 
 Exafmm-t is a fast multipole method (FMM) library for N-body simulations in 3D.
-It implements the kernel-independent fast multipole method [@yingKernelindependentAdaptiveFast2004] (KIFMM) and runs on multicore architectures. 
+It implements the kernel-independent fast multipole method (@yingKernelindependentAdaptiveFast2004) (KIFMM) and runs on multicore architectures. 
 Currently, it supports both potential and force calculation of Laplace, low-frequency Helmholtz and modified Helmholtz (Yukawa) kernel; furthermore, users can add other non-oscillatory kernels with only modest effort in exafmm-t's framework.
-Exafmm-t is a header-only library written in C++ and also provides Python APIs using pybind11 [@pybind11].
+Exafmm-t is a header-only library written in C++ and also provides Python APIs using pybind11 (@pybind11).
 
-Greengard and Rokhlin pioneered the original FMM work [@GreengardRokhlin1987] in 1987.
-Over the past few decades, a plethora of high-performance FMM implementations [@yokotaFMMBasedDual2013, @malhotraPVFMMParallelKernel2015, @blanchardScalFMMGenericParallel2015, @choiCPUGPUHybrid2014] have emerged.
+Greengard and Rokhlin pioneered the original FMM work (@GreengardRokhlin1987) in 1987.
+Over the past few decades, a plethora of high-performance FMM implementations (@yokotaFMMBasedDual2013, @malhotraPVFMMParallelKernel2015, @blanchardScalFMMGenericParallel2015, @choiCPUGPUHybrid2014) have emerged.
 However, many of them are geared towards specific research needs complicated to understand.
 less accessible to other users
 This motivates us 
