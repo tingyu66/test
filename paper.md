@@ -20,7 +20,7 @@ affiliations:
    index: 1
  - name: Tokyo Institute of Technology
    index: 2
-date: 21 June 2020
+date: 21 July 2020
 bibliography: paper.bib
 ---
 
