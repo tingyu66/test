@@ -26,9 +26,9 @@ bibliography: paper.bib
 
 # Summary
 
-The fast multipole method (FMM) is recognized as one of the top 10 algorithms from the 20-th century.
-It reduces the complexity of N-body problems from $\mathcal{O}(N^2)$ to $\mathcal{O}(N)$ by approximating far-range interactions in a hierarchical way.
-
+The fast multipole method (FMM), recognized as one of the top 10 algorithms from the 20-th century,
+is an algorithm that reduces the complexity of N-body problems from $\mathcal{O}(N^2)$ to $\mathcal{O}(N)$ by approximating far-range interactions in a hierarchical way.
+Originally developed for fast evaluation of the gravitational potential field, the FMM and its variants now have found many applications in different fields.
 
 Exafmm-t is a fast multipole method (FMM) library for N-body simulations in 3D.
 It implements the kernel-independent fast multipole method (@yingKernelindependentAdaptiveFast2004) (KIFMM) and runs on multicore architectures. 
