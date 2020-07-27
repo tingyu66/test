@@ -30,7 +30,7 @@ The fast multipole method (FMM), recognized as one of the top 10 algorithms from
 is an algorithm that reduces the complexity of N-body problems from $\mathcal{O}(N^2)$ to $\mathcal{O}(N)$ by approximating far-range interactions in a hierarchical way.
 Originally developed for fast evaluation of the gravitational potential field, the FMM and its variants now have found many applications in different fields.
 
-Exafmm-t is a fast multipole method (FMM) library for N-body simulations in 3D.
+Exafmm-t is a parallel fast multipole method (FMM) library for solving N-body problems in 3D.
 It implements the kernel-independent fast multipole method (@yingKernelindependentAdaptiveFast2004) (KIFMM) and runs on multicore architectures. 
 Currently, it supports both potential and force calculation of Laplace, low-frequency Helmholtz and modified Helmholtz (Yukawa) kernel; furthermore, users can add other non-oscillatory kernels with only modest effort in exafmm-t's framework.
 Exafmm-t is a header-only library written in C++ and also provides Python APIs using pybind11 (@pybind11).
