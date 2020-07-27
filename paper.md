@@ -31,13 +31,13 @@ is an algorithm that reduces the complexity of N-body problems from $\mathcal{O}
 Originally developed for fast evaluation of the gravitational potential field, the FMM and its variants now have found many applications in different fields.
 
 Over the past few decades, a plethora of high-performance FMM implementations (@yokotaFMMBasedDual2013, @malhotraPVFMMParallelKernel2015, @blanchardScalFMMGenericParallel2015, @choiCPUGPUHybrid2014) have emerged.
-However, the FMM community still lacks a standard and easy-to-use open-source software package, like FFTW for Fast Fourier transform.
+However, the FMM community still lacks a standard, high-performance and easy-to-use open-source software package, like FFTW for Fast Fourier transform.
 This motivates us to develop exafmm-t to bring the FMM to a broader audience and more scientific applications.
 
 Exafmm-t is a parallel fast multipole method (FMM) library for solving N-body problems in 3D.
 It implements the kernel-independent fast multipole method (@yingKernelindependentAdaptiveFast2004) (KIFMM) and runs on multicore architectures. 
 Currently, it supports both potential and force calculation of Laplace, low-frequency Helmholtz and modified Helmholtz (Yukawa) kernel; furthermore, users can add other non-oscillatory kernels with only modest effort in exafmm-t's framework.
-Exafmm-t is a header-only library written in C++ and also provides Python APIs using pybind11 (@pybind11).
+It is a header-only library written in C++ and also provides Python APIs using pybind11 (@pybind11).
 
 Exafmm-t is designed to be standard, lean and fast.
 First, it only uses C++ STL containers and only depends on mature math libraries: BLAS, LAPACK and FFTW3.
