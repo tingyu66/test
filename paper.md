@@ -32,7 +32,7 @@ Originally developed for fast evaluation of the gravitational potential field, t
 
 Over the past few decades, a plethora of high-performance FMM implementations (@yokotaFMMBasedDual2013, @malhotraPVFMMParallelKernel2015, @blanchardScalFMMGenericParallel2015, @choiCPUGPUHybrid2014) have emerged.
 However, the FMM community still lacks a standard and easy-to-use open-source software package, like FFTW for Fast Fourier transform.
-This motivates us to develop exafmm-t to bring the FMM to a broader audience 
+This motivates us to develop exafmm-t to bring the FMM to a broader audience and more scientific applications.
 
 Exafmm-t is a parallel fast multipole method (FMM) library for solving N-body problems in 3D.
 It implements the kernel-independent fast multipole method (@yingKernelindependentAdaptiveFast2004) (KIFMM) and runs on multicore architectures. 
