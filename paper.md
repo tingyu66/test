@@ -41,14 +41,14 @@ It is a header-only library written in C/C++ and also provides Python APIs using
 
 Exafmm-t is designed to be standard and lean.
 First, it only uses C++ STL containers and depends on mature math libraries: BLAS, LAPACK and FFTW3.
-Second, exafmm-t is designed to be moderately object-oriented, namely, it has a minimal use of encapsulation, inheritance and polymorphism.
+Second, exafmm-t is moderately object-oriented, namely, it has a minimal use of encapsulation, inheritance and polymorphism.
 As a result, the core library consists of around 6,000 lines of code, which is an order of magnitude shorter than many other FMM packages.
 
 Exafmm-t is concise but highly optimized.
 To achieve competitive performance, our work combines techniques and optimizations from several past efforts.
 On top of multi-threading using OpenMP, we further speed up the P2P operator (near-range interactions) using SIMD vectorization with SSE/AVX/AVX-512 compatibility;
-we apply the cache optimization proposed in PVFMM to improve performance of M2L operator (far-range interactions).
-In addition, exafmm-t also allows users to pre-compute and store translation operators, which benefits applications that requires FMM evaluation iteratively.
+we apply the cache optimization proposed in PVFMM to improve the performance of M2L operator (far-range interactions).
+In addition, exafmm-t also allows users to pre-compute and store translation operators, which benefits applications that requires FMM evaluations iteratively.
 
 Exafmm-t is also easy to extend.
 Adding a new kernel only requires users to create a derived `FMM` class and provide the kernel function.
@@ -57,9 +57,10 @@ Thanks to pybind11, most STL containers can be automatically converted to Python
 Since Python uses duck typing, we have to expose overloaded functions to different Python objects.
 To avoid naming collision and keep a clean interface, we choose to create a Python module for each kernel under exafmm-t's Python package, instead of adding suffixes to function and class names to identify types.
 
-We are currently integrating exafmm-t into Bempp-cl, an open-source boundary element package in Python,
+We are currently integrating exafmm-t into Bempp-cl, an open-source boundary element method (BEM) package in Python,
 whose predecessor, BEM++, has enabled many acoustic and electromagnetic applications.
-FMM reduce time and memory cost of solving the dense linear systems arising in boundary element applications.
+In BEM applications, computations are dominated by matrix-vector multiplications in the iterative solver.
+Using FMM will reduce both time and memory cost of solving such dense linear systems.
 
 
 # References
