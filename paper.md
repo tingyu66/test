@@ -4,6 +4,7 @@ tags:
   - C++
   - Python
   - fast multipole method
+  - low-rank approximation
   - high performance computing
 authors:
  - name: Tingyu Wang
