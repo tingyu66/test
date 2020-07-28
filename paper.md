@@ -58,10 +58,10 @@ Thanks to pybind11, most STL containers can be automatically converted to Python
 Since Python uses duck typing, we have to expose overloaded functions to different Python objects.
 To avoid naming collision and keep a clean interface, we choose to create a Python module for each kernel under `exafmm-t`'s Python package, instead of adding suffixes to function and class names to identify types.
 
-We are currently integrating `exafmm-t` into `Bempp-cl`, an open-source boundary element method (BEM) package in Python,
+To demonstrate its capability, we are currently integrating `exafmm-t` into `Bempp-cl`, an open-source boundary element method (BEM) package in Python,
 whose predecessor, `BEM++` (@smigajSolvingBoundaryIntegral2015), has enabled many acoustic and electromagnetic applications.
-In BEM applications, computations are dominated by matrix-vector multiplications in the iterative solver.
-`exafmm-t` will reduce both time and memory cost of solving such dense linear systems in BEM.
+In BEM applications, computations are dominated by the dense matrix-vector multiplication (mat-vec) in each iteration.
+`exafmm-t` reduces both time and memory cost of mat-vec to a linear complexity, thus makes `Bempp-cl` feasible to solve large-scale problems.
 
 
 # References
