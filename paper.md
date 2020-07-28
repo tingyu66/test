@@ -42,13 +42,13 @@ It is a header-only library written in C/C++ and also provides Python APIs using
 
 `exafmm-t` is designed to be standard and lean.
 First, it only uses C++ STL containers and depends on mature math libraries: BLAS, LAPACK and FFTW3.
-Second, `exafmm-t` is moderately object-oriented, namely, it has a minimal use of encapsulation, inheritance and polymorphism.
+Second, `exafmm-t` is moderately object-oriented, namely, the usage of encapsulation, inheritance and polymorphism is conservative or even minimal in the code.
 As a result, the core library consists of around 6,000 lines of code, which is an order of magnitude shorter than many other FMM packages.
 
 `exafmm-t` is concise but highly optimized.
 To achieve competitive performance, our work combines techniques and optimizations from several past efforts.
 On top of multi-threading using OpenMP, we further speed up the P2P operator (near-range interactions) using SIMD vectorization with SSE/AVX/AVX-512 compatibility;
-we apply the cache optimization proposed in PVFMM to improve the performance of M2L operator (far-range interactions).
+we apply the cache optimization proposed in PVFMM (@malhotraPVFMMParallelKernel2015) to improve the performance of M2L operator (far-range interactions).
 In addition, `exafmm-t` also allows users to pre-compute and store translation operators, which benefits applications that requires FMM evaluations iteratively.
 
 `exafmm-t` is also easy to extend.
@@ -59,9 +59,9 @@ Since Python uses duck typing, we have to expose overloaded functions to differe
 To avoid naming collision and keep a clean interface, we choose to create a Python module for each kernel under `exafmm-t`'s Python package, instead of adding suffixes to function and class names to identify types.
 
 We are currently integrating `exafmm-t` into `Bempp-cl`, an open-source boundary element method (BEM) package in Python,
-whose predecessor, `BEM++`, has enabled many acoustic and electromagnetic applications.
+whose predecessor, `BEM++` (@smigajSolvingBoundaryIntegral2015), has enabled many acoustic and electromagnetic applications.
 In BEM applications, computations are dominated by matrix-vector multiplications in the iterative solver.
-Using FMM will reduce both time and memory cost of solving such dense linear systems.
+`exafmm-t` will reduce both time and memory cost of solving such dense linear systems in BEM.
 
 
 # References
