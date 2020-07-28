@@ -46,8 +46,9 @@ As a result, the core library consists of around 6,000 lines of code, which is a
 
 Exafmm-t is concise but highly optimized.
 To achieve competitive performance, our work combines techniques and optimizations from several past efforts.
-In addition to multi-threading using OpenMP, we further speed up the P2P kernel (near-range interactions) using SIMD vectorization with SSE/AVX/AVX-512 compatibility;
+On top of multi-threading using OpenMP, we further speed up the P2P kernel (near-range interactions) using SIMD vectorization with SSE/AVX/AVX-512 compatibility;
 we apply the cache optimization proposed in PVFMM to improve performance of M2L kernel (far-range interactions).
+In addition, exafmm-t also allows users to pre-compute and store translation operators, which benefits applications that requires FMM evaluation iteratively.
 
 
 If offers high-level Python APIs.
