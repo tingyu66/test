@@ -42,13 +42,14 @@ It is a header-only library written in C/C++ and also provides Python APIs using
 Exafmm-t is designed to be standard, lean and fast.
 First, it only uses C++ STL containers and depends on mature math libraries: BLAS, LAPACK and FFTW3.
 Second, exafmm-t is designed to be moderately object-oriented, namely, it has a minimal use of encapsulation, inheritance and polymorphism.
-As a result, exafmm-t is concise in terms of lines of code. 
+As a result, exafmm-t is concise in terms of lines of code.
+The core library consists of around 6,000 lines of code, which is an order of magnitude shorter than many other FMM packages.
 
 Our work combines techniques from several past efforts, with regards to data structures, algorithmic tricks, and memory optimizations.
 
 
 
-Second, exafmm-t is concise but highly optimized. The core library consists of around 6,000 lines of code.
+Second, exafmm-t is concise but highly optimized. 
 In addition to multi-threading, we further speed up the near-range interactions using SIMD vectorization (SSE/AVX/AVX-512); we use the cache optimization proposed in PVFMM to improve performance of the far-range interactions.
 If offers high-level Python APIs.
 
