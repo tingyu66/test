@@ -39,18 +39,17 @@ It implements the kernel-independent fast multipole method (@yingKernelindepende
 Currently, it supports both potential and force calculation of Laplace, low-frequency Helmholtz and modified Helmholtz (Yukawa) kernel; furthermore, users can add other non-oscillatory kernels with only modest effort in exafmm-t's framework.
 It is a header-only library written in C/C++ and also provides Python APIs using pybind11 (@pybind11).
 
-Exafmm-t is designed to be standard, lean and fast.
+Exafmm-t is designed to be standard and lean.
 First, it only uses C++ STL containers and depends on mature math libraries: BLAS, LAPACK and FFTW3.
 Second, exafmm-t is designed to be moderately object-oriented, namely, it has a minimal use of encapsulation, inheritance and polymorphism.
-As a result, exafmm-t is concise in terms of lines of code.
-The core library consists of around 6,000 lines of code, which is an order of magnitude shorter than many other FMM packages.
+As a result, the core library consists of around 6,000 lines of code, which is an order of magnitude shorter than many other FMM packages.
 
-In addition, 
+Exafmm-t is concise but highly optimized.
+To achieve competitive performance, our work combines techniques and optimizations from several past efforts.
+In addition to multi-threading using OpenMP, we further speed up the P2P kernel (near-range interactions) using SIMD vectorization with SSE/AVX/AVX-512 compatibility;
+we apply the cache optimization proposed in PVFMM to improve performance of M2L kernel (far-range interactions).
 
-Our work combines techniques from several past efforts, with regards to data structures, algorithmic tricks, and memory optimizations.
 
-Exafmm-t is concise but highly optimized. 
-In addition to multi-threading, we further speed up the near-range interactions using SIMD vectorization (SSE/AVX/AVX-512); we use the cache optimization proposed in PVFMM to improve performance of the far-range interactions.
 If offers high-level Python APIs.
 
 However, many of them are geared towards specific research needs complicated to understand.
