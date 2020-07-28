@@ -51,10 +51,11 @@ we apply the cache optimization proposed in PVFMM to improve performance of M2L 
 In addition, exafmm-t also allows users to pre-compute and store translation operators, which benefits applications that requires FMM evaluation iteratively.
 
 Exafmm-t is also easy to extend.
-To add a new kernel, users only need to create a derived `FMM` class and provide the kernel function.
-Last but not least, it offers high-level Python APIs.
-
-However, many of them are geared towards specific research needs complicated to understand.
+Adding a new kernel only requires users to create a derived `FMM` class and provide the kernel function.
+Last but not least, it offers high-level Python APIs to support Python applications.
+Thanks to pybind11, most STL containers can be automatically converted to Python native data structures.
+Since Python uses duck typing, we have to expose overloaded functions to different Python objects.
+To avoid naming collision, we prefer to create a Python module for each kernel under exafmm-t's Python package, instead of adding suffixes to function and class names to identify types.
 
 We are currently integrating exafmm-t into Bempp-cl, an open-source boundary element package in Python.
 It uses FMM to reduce time and memory cost of solving the dense linear systems arising in boundary element applications.
