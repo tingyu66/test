@@ -55,7 +55,7 @@ Adding a new kernel only requires users to create a derived `FMM` class and prov
 Last but not least, it offers high-level Python APIs to support Python applications.
 Thanks to pybind11, most STL containers can be automatically converted to Python native data structures.
 Since Python uses duck typing, we have to expose overloaded functions to different Python objects.
-To avoid naming collision, we prefer to create a Python module for each kernel under exafmm-t's Python package, instead of adding suffixes to function and class names to identify types.
+To avoid naming collision and keep a clean interface, we choose to create a Python module for each kernel under exafmm-t's Python package, instead of adding suffixes to function and class names to identify types.
 
 We are currently integrating exafmm-t into Bempp-cl, an open-source boundary element package in Python.
 It uses FMM to reduce time and memory cost of solving the dense linear systems arising in boundary element applications.
