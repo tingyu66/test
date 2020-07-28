@@ -45,19 +45,15 @@ Second, exafmm-t is designed to be moderately object-oriented, namely, it has a 
 As a result, exafmm-t is concise in terms of lines of code.
 The core library consists of around 6,000 lines of code, which is an order of magnitude shorter than many other FMM packages.
 
+In addition, 
+
 Our work combines techniques from several past efforts, with regards to data structures, algorithmic tricks, and memory optimizations.
 
-
-
-Second, exafmm-t is concise but highly optimized. 
+Exafmm-t is concise but highly optimized. 
 In addition to multi-threading, we further speed up the near-range interactions using SIMD vectorization (SSE/AVX/AVX-512); we use the cache optimization proposed in PVFMM to improve performance of the far-range interactions.
 If offers high-level Python APIs.
 
-Greengard and Rokhlin pioneered the original FMM work (@GreengardRokhlin1987) in 1987.
-Over the past few decades, a plethora of high-performance FMM implementations (@yokotaFMMBasedDual2013, @malhotraPVFMMParallelKernel2015, @blanchardScalFMMGenericParallel2015, @choiCPUGPUHybrid2014) have emerged.
 However, many of them are geared towards specific research needs complicated to understand.
-less accessible to other users
-This motivates us 
 
 We are currently integrating exafmm-t into Bempp-cl, an open-source boundary element package in Python.
 It uses FMM to reduce time and memory cost of solving the dense linear systems arising in boundary element applications.
