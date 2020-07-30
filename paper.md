@@ -31,14 +31,16 @@ The fast multipole method (FMM), recognized as one of the top 10 algorithms (@Bo
 is an algorithm that reduces the complexity of N-body problems from $\mathcal{O}(N^2)$ to $\mathcal{O}(N)$ by approximating far-range interactions in a hierarchical way.
 Originally developed for fast evaluation of the gravitational potential field, the FMM and its variants now have found many applications in different fields.
 
-Over the past few decades, a plethora of high-performance fast N-body implementations have emerged.
+Over the past few decades, a plethora of highly optimized fast N-body implementations have emerged.
 `Bonsai` is a gravitational treecode that runs entirely on GPU.
 `ChaNGa` is also a treecode that use `Charm++` to automate dynamic load balancing.
-In terms of FMM codes, 
+In terms of FMM codes, `ScalFMM` (@blanchardScalFMMGenericParallel2015) implements the black-box FMM, a kernel-independent variant based on interpolation.
+It comes with an option to use `StarPU` runtime system to handle heterogeneous task scheduling.
+`PVFMM` (@malhotraPVFMMParallelKernel2015) can compute both particle and volume potentials using kernel-independent FMM.
 
-(@yokotaFMMBasedDual2013, @malhotraPVFMMParallelKernel2015, @blanchardScalFMMGenericParallel2015, @choiCPUGPUHybrid2014).
+(@yokotaFMMBasedDual2013,
 
-However, the FMM community still lacks a well-established, high-performance and easy-to-use open-source software package, like FFTW for Fast Fourier transform.
+However, one remaining challenge in the FMM community is to develop a well-established, high-performance and easy-to-use open-source software package, like FFTW for Fast Fourier transform.
 This motivates us to develop `exafmm-t` to bring the FMM to a broader audience and more scientific applications.
 
 `exafmm-t` is a parallel fast multipole method library for solving N-body problems in 3D.
