@@ -58,7 +58,8 @@ On top of multi-threading using OpenMP, we further speed up the P2P operator (ne
 we apply the cache optimization proposed in PVFMM (@malhotraPVFMMParallelKernel2015) to improve the performance of M2L operator (far-range interactions).
 In addition, `exafmm-t` also allows users to pre-compute and store translation operators, which benefits applications that requires FMM evaluations iteratively.
 The single-node performance of `exafmm-t` is on par with the state-of-the-art packages that we mentioned above.
-
+We ran a benchmark that solves a Laplace N-body problem with 1 million randomly distributed particles on a workstation with a 14-core i9-7940X CPU.
+It took 0.95 and 1.48 seconds to obtain 7 and 10 digits of accuracy on potential respectively.
 
 `exafmm-t` is also easy to extend.
 Adding a new kernel only requires users to create a derived `FMM` class and provide the kernel function.
