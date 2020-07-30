@@ -36,14 +36,14 @@ Over the past few decades, a plethora of highly optimized fast N-body implementa
 `ChaNGa` (@jetleyMassivelyParallelCosmological2008) is also a treecode that use `Charm++` to automate dynamic load balancing.
 In terms of FMM codes, `ScalFMM` (@blanchardScalFMMGenericParallel2015) implements the black-box FMM, a kernel-independent variant based on interpolation.
 It comes with an option to use `StarPU` runtime system to handle heterogeneous task scheduling.
-`PVFMM` (@malhotraPVFMMParallelKernel2015) can compute both particle and volume potentials using kernel-independent FMM.
+`PVFMM` (@malhotraPVFMMParallelKernel2015) can compute both particle and volume potentials using kernel-independent FMM (KIFMM).
 `exafmm` (@yokotaFMMBasedDual2013) focuses on low accuracy optimizations via dual tree traversal.
-
-However, one remaining challenge in the FMM community is to develop a well-established, high-performance and easy-to-use open-source software package, like FFTW for Fast Fourier transform.
+However, one remaining challenge in the FMM community is to develop a well-established open-source software package, like FFTW for Fast Fourier transform,
+that delivers compelling performance with a standard and easy-to-use interface.
 This motivates us to develop `exafmm-t` to bring the FMM to a broader audience and more scientific applications.
 
-`exafmm-t` is a parallel fast multipole method library for solving N-body problems in 3D.
-It implements the kernel-independent fast multipole method (@yingKernelindependentAdaptiveFast2004) (KIFMM) and runs on multicore architectures. 
+`exafmm-t` is a parallel FMM library for solving N-body problems in 3D.
+It implements the kernel-independent fast multipole method (@yingKernelindependentAdaptiveFast2004) and runs on multicore architectures. 
 Currently, it supports both potential and force calculation of Laplace, low-frequency Helmholtz and modified Helmholtz (Yukawa) kernel; furthermore, users can add other non-oscillatory kernels with only modest effort in `exafmm-t`'s framework.
 It is a header-only library written in C/C++ and also provides Python APIs using pybind11 (@pybind11).
 
@@ -57,6 +57,8 @@ To achieve competitive performance, our work combines techniques and optimizatio
 On top of multi-threading using OpenMP, we further speed up the P2P operator (near-range interactions) using SIMD vectorization with SSE/AVX/AVX-512 compatibility;
 we apply the cache optimization proposed in PVFMM (@malhotraPVFMMParallelKernel2015) to improve the performance of M2L operator (far-range interactions).
 In addition, `exafmm-t` also allows users to pre-compute and store translation operators, which benefits applications that requires FMM evaluations iteratively.
+The single-node performance of `exafmm-t` is on par with the state-of-the-art packages that we mentioned above.
+
 
 `exafmm-t` is also easy to extend.
 Adding a new kernel only requires users to create a derived `FMM` class and provide the kernel function.
