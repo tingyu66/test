@@ -32,8 +32,8 @@ is an algorithm that reduces the complexity of N-body problems from $\mathcal{O}
 Originally developed for fast evaluation of the gravitational potential field, the FMM and its variants now have found many applications in different fields.
 
 Over the past few decades, a plethora of highly optimized fast N-body implementations have emerged.
-`Bonsai` is a gravitational treecode that runs entirely on GPU.
-`ChaNGa` is also a treecode that use `Charm++` to automate dynamic load balancing.
+`Bonsai` (@bedorfSparseOctreeGravitational2012) is a gravitational treecode that runs entirely on GPU.
+`ChaNGa` (@jetleyMassivelyParallelCosmological2008) is also a treecode that use `Charm++` to automate dynamic load balancing.
 In terms of FMM codes, `ScalFMM` (@blanchardScalFMMGenericParallel2015) implements the black-box FMM, a kernel-independent variant based on interpolation.
 It comes with an option to use `StarPU` runtime system to handle heterogeneous task scheduling.
 `PVFMM` (@malhotraPVFMMParallelKernel2015) can compute both particle and volume potentials using kernel-independent FMM.
