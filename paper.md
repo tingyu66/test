@@ -37,8 +37,7 @@ Over the past few decades, a plethora of highly optimized fast N-body implementa
 In terms of FMM codes, `ScalFMM` (@blanchardScalFMMGenericParallel2015) implements the black-box FMM, a kernel-independent variant based on interpolation.
 It comes with an option to use `StarPU` runtime system to handle heterogeneous task scheduling.
 `PVFMM` (@malhotraPVFMMParallelKernel2015) can compute both particle and volume potentials using kernel-independent FMM.
-
-(@yokotaFMMBasedDual2013,
+`exafmm` (@yokotaFMMBasedDual2013) focuses on low accuracy optimizations via dual tree traversal.
 
 However, one remaining challenge in the FMM community is to develop a well-established, high-performance and easy-to-use open-source software package, like FFTW for Fast Fourier transform.
 This motivates us to develop `exafmm-t` to bring the FMM to a broader audience and more scientific applications.
